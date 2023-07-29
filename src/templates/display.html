@@ -1,0 +1,50 @@
+<html>
+    <head>
+    <script src = " https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/ajax.js"></script>
+    <style>
+        img{
+            height: 350px;
+            width: 460px;
+        }
+        .btn-primary,.btn-outline-primary{
+            height: fit-content;
+            width: fit-content;
+            margin-top: 11%;
+        }
+        span{
+            font-weight: bold;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="d-flex justify-content-around" id="heading">
+            <div>Faculty: <span id="fac">{{data[0]}}</span></div>
+            <div>Subject: <span id="sub">{{data[1]}}</span></div>
+            <span id="y">
+                <form action="{{url_for('Prev_comparison',fac=data[0],sub=data[1])}}" ,method="post" class="d-flex justify-content-end">
+                    Academic Year:<input type="text" name="year" class="form-control" value="{{data[2]}}" id="year">
+                    <input type="submit" value="Submit" class="btn btn-info">
+                </form>
+            </span>
+        </div>        
+        <div class="d-flex justify-content-around">
+            <img src="data:image/png;base64,{{plot_url}}" alt="">            
+            <button class="btn btn-primary" id="overall" onclick="overall()">overall</button>
+            <div id="ajax"></div>
+        </div>  
+        <div class="d-flex justify-content-around">
+            <div id="labels">
+                <p>1. Teacher is punctual, arrives on time and leaves on time</p>
+                <p>2. Teacher is good at explaining the subject matter</p>
+                <p>3. Teacher's presentation was clear, loud ad easy to understand</p>
+                <p>4. Teacher is good at using innovative teaching methods/ways</p>
+                <p>5. Teacher has completed the whole course as per course outline</p>
+            </div>
+            <a href="{{url_for('compare',sub=data[1])}}" class="btn btn-outline-primary">Compare with colleagues</a>
+        </div>      
+    <script src="/static/js/ajax.js"></script>
+    </body>
+</html>

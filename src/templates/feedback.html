@@ -1,0 +1,45 @@
+<div id="feedback">
+    <form onchange="change()" id="subjects">
+        <div class="label d-flex justify-content-between">
+            <span>Click checkboxes to enable the feedback</span>
+            <span style="font-weight: lighter;font-size: 15px;">
+                <span>1-Poor&ensp;2-Bad&ensp;3-Average&ensp;4-Good&ensp;5-Best</span>
+            </span>
+        </div>
+    </form>
+    {% for i in data %}
+        <input type="hidden" value="{{i}}" id="sub">
+    {% endfor %}
+    {% for j in cond %}
+        <input type="hidden" value="{{j}}" id="cond">
+    {% endfor %}
+    <div class="feedback">
+        <form onsubmit="validate()">
+            <table class="table table-bordered w-auto">
+                <thead>
+                    <tr>   
+                        <th>Questions</th>
+                    </tr>   
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Teacher is punctual, arrives on time and leaves on time</td> 
+                    </tr>
+                    <tr>
+                        <td>Teacher is good at explaining the subject matter</td> 
+                    </tr>
+                    <tr>
+                        <td>Teacher's presentation was clear, loud ad easy to understand</td>
+                    </tr>
+                    <tr>
+                        <td>Teacher is good at using innovative teaching methods/ways</td>
+                    </tr>
+                    <tr>
+                        <td>Teacher has completed the whole course as per course outline</td> 
+                    </tr>
+                </tbody>
+            </table>
+            <input type="submit" value="Submit" class="btn btn-success">
+        </form>
+    </div>
+</div>

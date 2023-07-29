@@ -1,0 +1,21 @@
+.label{
+    font-size: 20px;
+    font-weight: bold;
+}
+.form-check{
+    float:left;
+    margin-left:5%;
+    padding:10px;
+}
+#feedback{
+    margin: auto;
+    padding:20px;
+}
+th{
+    text-align: center;
+}
+.feedback{
+    width: 90%;
+    margin:auto;
+    margin-top:5%;
+}  
